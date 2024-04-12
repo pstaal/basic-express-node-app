@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import cors from 'cors';
 import express from 'express';
+const getSqlPeople = require("./controllers/people_sql")
 
 const app = express();
 
@@ -8,6 +9,11 @@ app.use(cors());
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
+});
+
+app.get('/people', async (req, res) => {
+  response = await getSqlPeople()
+  console.log(response)
 });
 
 app.listen(process.env.PORT, () =>
