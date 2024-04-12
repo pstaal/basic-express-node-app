@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 
 app.get('/people', async (req, res) => {
   response = await getSqlPeople()
-  console.log(response)
+  res.send(response)
 });
 
 app.listen(process.env.PORT, () =>

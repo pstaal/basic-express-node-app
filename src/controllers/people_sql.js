@@ -9,7 +9,6 @@ async function getSqlPeople(){
 
   let res = await client.query("SELECT * FROM people");
 
-
   await client.end();
 
   return res
