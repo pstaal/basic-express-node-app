@@ -3,7 +3,8 @@ const client = new Client({
     user: 'peter',
     host: 'peter-staal.com',
     database: 'people',
-    port: 5432
+    password: "Joppe17052013!",
+    port: 5432,
 });
 
 
