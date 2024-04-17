@@ -12,10 +12,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/people', async (req, res) => {
-  response = await getSqlPeople()
+  let response = await getSqlPeople()
   res.send(response)
 });
 
 app.listen(process.env.PORT, () =>
   console.log(`Example app listening on port ${process.env.PORT}!`),
 );
+
