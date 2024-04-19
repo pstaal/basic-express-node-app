@@ -17,5 +17,15 @@ async function getSqlPeople(){
   return res
 }
 
-module.exports = getSqlPeople;
+
+async function postSqlPeople(name, email) {
+  await client.connect();
+
+  let res = await client.query('INSERT INTO people (people_name, email) VALUES ($1, $2)', [name, email]);
+
+  await client.end();
+
+  return res
+}
+module.exports = {getSqlPeople, postSqlPeople}
 
